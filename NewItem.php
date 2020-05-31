@@ -62,10 +62,10 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item active" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item active" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -83,14 +83,14 @@ if (!isset($_SESSION['loggedin'])) {
 							<label for="Group" style="font-size: 30px">Group</label>
 							<select class="form-control" id="Group" name="Group" required>
 								<option disabled selected value> -- select an option -- </option>
-  								<option value="001">Drums and Purcussion</option>
+  								<option value="001">Drums and Purcusion</option>
 								<option value="002">String Instruments</option>
 								<option value="003">Keyboard</option>
 								<option value="004">Misc. Instruments</option>
 								<option value="005">Microphone</option>
 								<option value="006">Jacks and Cords</option>
 								<option value="007">Amplifiers and Monitors</option>
-								<option value="008">Misc. Equipments for Drums and Purcussion</option>
+								<option value="008">Misc. Equipments for Drums and Purcusion</option>
 								<option value="009">Misc. Equipments for String Instruments</option>
 								<option value="010">Misc. Equipments for Keyboard</option>
 								<option value="011">Misc. Misc. Equipments</option>
@@ -98,7 +98,7 @@ if (!isset($_SESSION['loggedin'])) {
 							</select>
 						</div>
 						<div class="col">
-							<label for="7c" style="font-size: 30px">7 Digit Code</label>
+							<label for="7c" style="font-size: 30px">7-Digit Code</label>
 							<input type="text" class="form-control" id="7c" name="7c" maxlength="7" placeholder="Ex. 1234567, 000005" required>
 
 						</div>
@@ -136,7 +136,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<br>
 					<div class="row">
 						<div class="col">
-							<label for="Conditions" style="font-size: 30px">Conditions</label>
+							<label for="Conditions" style="font-size: 30px">Condition</label>
 							<input type="text" class="form-control" id="Conditions" name="Conditions" maxlength="255">
 						</div>
 					</div>
@@ -144,7 +144,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col">
 							<label for="size" style="font-size: 30px">Size Indicator</label>
-							<input type="text" class="form-control" id="size" name="size" maxlength="255" placeholder="Ex. 12 in, 5.5 in">
+							<input type="text" class="form-control" id="size" name="size" maxlength="255" placeholder="Ex. 12 in, 5 str">
 						</div>
 						<div class="col">
 							<label for="OwnerID" style="font-size: 30px">Owner ID</label>

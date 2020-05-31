@@ -87,10 +87,10 @@ $q="INSERT INTO `owner` (`owner_id`, `first_name`, `surname`, `nickname`, `year`
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item active" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item active" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -117,7 +117,7 @@ $q="INSERT INTO `owner` (`owner_id`, `first_name`, `surname`, `nickname`, `year`
 			?>
 			
 		</div>
-			<div class="col-md-4" style="background-image: url(images/pepae.jpg); background-size: cover; height: 1000px; width: 600px"></div>
+			<div class="col-md-4" style="background-image: url(images/emptysofa.jpg); background-size: cover; height: 1000px; width: 600px"></div>
 		</div>
 		  <br>
 		<div class="row text-dark">

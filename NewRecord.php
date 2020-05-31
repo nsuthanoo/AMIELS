@@ -76,10 +76,10 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item active" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -122,7 +122,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="col">
 							<label for="ItemID" style="font-size: 30px">Item ID</label>
 							<input type="text" class="form-control" id="ItemID" name="ItemID" placeholder="xxxxxxxxxx" required minlength="10" maxlength="10" pattern="[0-9]{10}">
-							<small id="FindItemID" class="form-text text-muted">Find item ID <a href="ManageItems" style="color: black" target="_blank">here</a></small>
+							<small id="FindItemID" class="form-text text-muted">Find Item ID <a href="ManageItems" style="color: black" target="_blank">here</a></small>
 						</div>
 					</div>
 					<?php 
@@ -148,7 +148,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="col">
 							<label for="StaffID" style="font-size: 30px">Staff ID</label>
 							<input type="text" class="form-control" id="StaffID" name="StaffID" placeholder="xxxxx" required minlength="5" maxlength="5" pattern="[0-9]{5}">
-							<small id="FindStaffID" class="form-text text-muted">Find staff ID <a href="ManageStaffs" style="color: black" target="_blank">here</a></small>
+							<small id="FindStaffID" class="form-text text-muted">Find Staff ID <a href="ManageStaffs" style="color: black" target="_blank">here</a></small>
 						</div>
 						<div class="col" style="font-size: 30px">
 							<label for="ReturnDate">Return Date</label>
@@ -160,7 +160,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="col">
 							<label for="remarks" style="font-size: 30px">Remarks</label>
 							<input type="text" class="form-control" id="remarks" name="remarks" maxlength="255">
-							<small id="remarksDetail" class="form-text text-muted">Max : 255 chars</small>
+							<small id="remarksDetail" class="form-text text-muted">Max. 255 characters</small>
 						</div>
 					</div>
 					<br>

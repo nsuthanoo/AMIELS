@@ -125,7 +125,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 					<div class="row">
 						<div class="col">
 							<label for="tel" style="font-size: 30px">Phone Number</label>
-							<input type="tel" class="form-control" id="tel" name="tel" placeholder="xxx-xxx-xxxx" required maxlength="12"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="'.$tel_no.'">
+							<input type="tel" class="form-control" id="tel" name="tel" placeholder="xxx-xxx-xxxx" maxlength="12"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="'.$tel_no.'">
 						</div>
 						<div class="col">
 							<label for="LineID" style="font-size: 30px">Line ID</label>
@@ -144,7 +144,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 					<input type="hidden" id="act" name="act" value="do_edit">
 					<div class="row">
 						<div class="col">
-							<button type="submit" class="btn btn-success btn-lg">Submit</button><br><br>
+							<button type="submit" class="btn btn-success btn-lg">Save</button><br><br>
 						</div>
 					</div>
 				</div>

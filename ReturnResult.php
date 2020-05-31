@@ -73,10 +73,10 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item active" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -100,46 +100,96 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 			if (isset($ma)){
 				echo '<p class="text-dark display-2">Return Item Result</p>';
 				echo '<p class="text-dark" style="font-weight: bold;">Item#1 Result:</p>';
-				$q="UPDATE item SET borrow_status = 'IN STOCK' WHERE item_id= '$item_id';";
-				if (mysqli_query($con, $q)) {
-					echo '<p class="text-dark">Item Status Changed Successfully</p>';
-				} else{
-					echo "<p class='text-dark'>Error : " . mysqli_error($con)."</p>";
+				$icq="SELECT borrow_status FROM item WHERE item_id='$item_id'";
+				$icqq=mysqli_query($con,$icq);
+				$icqr=mysqli_fetch_assoc($icqq);
+				if ($icqr['borrow_status']=='BORROWED'){
+					$chq="SELECT record.timestamp, record.item_id FROM record JOIN item ON item.item_id=record.item_id WHERE record.item_id=$item_id ORDER BY record.timestamp DESC LIMIT 1;";
+					$chqq=mysqli_query($con,$chq);
+					$chqr=mysqli_fetch_assoc($chqq);
+					if ($chqr['timestamp']==$k1){
+						$q="UPDATE item SET borrow_status = 'IN STOCK' WHERE item_id= '$item_id';";
+						if (mysqli_query($con, $q)) {
+							echo '<p class="text-dark">Item Status Changed Successfully</p>';
+						} else{
+							echo "<p class='text-dark'>Error : " . mysqli_error($con)."</p>";
+						}
+					} else {
+						echo "<p class='text-dark'>Error : Record has already been returned.</p>";
+					}
+				} else {
+					echo "<p class='text-dark'>Error : Item is already in stock or record ID does not exist.</p>";
 				}
 				for ($x = 2; $x <= $times; $x++) {
+					echo '<p class="text-dark" style="font-weight: bold;">Item#'.$x.' Result:</p>';
 					$ciid=$_POST['RecordID'.$x];
 					list($k1, $k2) = preg_split('/(?<=.{'.$syl.'})/', $ciid, 2);
 					$rec="SELECT item_id FROM record WHERE timestamp='$k1' AND id_increment ='$k2';";
 					$ci=mysqli_query($con, $rec);
 					$res=mysqli_fetch_assoc($ci);
 					$item_id=$res["item_id"];
-					$q="UPDATE item SET borrow_status = 'IN STOCK' WHERE item_id= '$item_id';";
-					echo '<p class="text-dark" style="font-weight: bold;">Item#'.$x.' Result:</p>';
-					if (mysqli_query($con, $q)) {
-						echo '<p class="text-dark">Item Status Changed Successfully</p>';
-					} else{
-						echo "<p class='text-dark'>Error : " . mysqli_error($con)."</p>";
+					$icq="SELECT borrow_status FROM item WHERE item_id='$item_id'";
+					$icqq=mysqli_query($con,$icq);
+					$icqr=mysqli_fetch_assoc($icqq);
+					if ($icqr['borrow_status']=='BORROWED'){
+						$chq="SELECT record.timestamp, record.item_id FROM record JOIN item ON item.item_id=record.item_id WHERE record.item_id=$item_id ORDER BY record.timestamp DESC LIMIT 1;";
+						$chqq=mysqli_query($con,$chq);
+						$chqr=mysqli_fetch_assoc($chqq);
+						if ($chqr['timestamp']==$k1){
+							$q="UPDATE item SET borrow_status = 'IN STOCK' WHERE item_id= '$item_id';";
+							if (mysqli_query($con, $q)) {
+								echo '<p class="text-dark">Item Status Changed Successfully</p>';
+							} else{
+								echo "<p class='text-dark'>Error : " . mysqli_error($con)."</p>";
+							}
+						} else {
+							echo "<p class='text-dark'>Error : Record has already been returned.</p>";
+						}
+					} else {
+						echo "<p class='text-dark'>Error : Item is already in stock or record ID does not exist.</p>";
 					}
 				}
 				echo '<br><a href="Return" class="btn btn-success btn-lg">Return More Items</a>&nbsp;';
 				echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
 				echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
 			} else{
-				$q="UPDATE item SET borrow_status = 'IN STOCK' WHERE item_id= '$item_id';";
-				if (mysqli_query($con, $q)) {
-				  echo '<p class="text-dark display-2">Item Status Changed Successfully!</p>';
-				  echo '<br><a href="Return" class="btn btn-success btn-lg">Return More Items</a>&nbsp;';
-				  echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
-				  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
-				} else {
-				  echo '<p class="text-dark display-2">Opps! Something went wrong.</p>';
-				  echo '<p class="text-dark display-4">Please check your information again.</p>';
-				  echo "<p class='text-dark'>Error Message: " . mysqli_error($con)."</p>";
-				  echo '<br><a href="Return" class="btn btn-success btn-lg">Try Again</a>&nbsp;';
-				  echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
-				  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
+				$icq="SELECT borrow_status FROM item WHERE item_id='$item_id'";
+				$icqq=mysqli_query($con,$icq);
+				$icqr=mysqli_fetch_assoc($icqq);
+				if ($icqr['borrow_status']=='BORROWED'){
+					$chq="SELECT record.timestamp, record.item_id FROM record JOIN item ON item.item_id=record.item_id WHERE record.item_id=$item_id ORDER BY record.timestamp DESC LIMIT 1;";
+					$chqq=mysqli_query($con,$chq);
+					$chqr=mysqli_fetch_assoc($chqq);
+					if ($chqr['timestamp']==$k1){
+						$q="UPDATE item SET borrow_status = 'IN STOCK' WHERE item_id= '$item_id';";
+						if (mysqli_query($con, $q)) {
+						  echo '<p class="text-dark display-2">Item Status Changed Successfully!</p>';
+						  echo '<br><a href="Return" class="btn btn-success btn-lg">Return More Items</a>&nbsp;';
+						  echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
+						  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
+						} else {
+						  echo '<p class="text-dark display-2">Opps! Something went wrong.</p>';
+						  echo '<p class="text-dark display-4">Please check your information again.</p>';
+						  echo "<p class='text-dark'>Error Message: " . mysqli_error($con)."</p>";
+						  echo '<br><a href="Return" class="btn btn-success btn-lg">Try Again</a>&nbsp;';
+						  echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
+						  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
+						}
+					}else{
+						echo '<p class="text-dark display-2">Opps! Something went wrong.</p>';
+						echo '<p class="text-dark display-4">Record has already been returned.</p>';
+						echo '<br><a href="Return" class="btn btn-success btn-lg">Try Again</a>&nbsp;';
+						echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
+						echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
+					}
+				}else{
+					echo '<p class="text-dark display-2">Opps! Something went wrong.</p>';
+					echo '<p class="text-dark display-4">Item is already in stock or record ID does not exist.</p>';
+					echo '<br><a href="Return" class="btn btn-success btn-lg">Try Again</a>&nbsp;';
+					echo '<a href="ManageItems" class="btn btn-warning btn-lg">Check Item Table</a>&nbsp;';
+					echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
 				}
-				}
+			}
 
 			?>
 		</div>

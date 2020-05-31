@@ -85,10 +85,10 @@ $q="INSERT INTO `client` (`student_id`, `first_name`, `surname`, `nickname`, `ye
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item active" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item active" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -107,7 +107,7 @@ $q="INSERT INTO `client` (`student_id`, `first_name`, `surname`, `nickname`, `ye
 			} else {
 			  echo '<p class="text-dark display-2">Opps! Something went wrong.</p>';
 			  echo '<p class="text-dark display-4">Please check your information again.</p>';
-			  echo "<p class='text-dark'>Error Message: " . mysqli_error($con)."</p>";
+			  echo "<p class='text-dark'>Student ID alredy exists in the database.</p>";
 			  echo '<br><a href="NewClient" class="btn btn-success btn-lg">Try Again</a>&nbsp;';
 			  echo '<a href="ManageClients" class="btn btn-warning btn-lg">Check Client Table</a>&nbsp;';
 			  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
@@ -115,7 +115,7 @@ $q="INSERT INTO `client` (`student_id`, `first_name`, `surname`, `nickname`, `ye
 			?>
 
 		</div>
-			<div class="col-md-4" style="background-image: url(images/tonton.jpg); background-size: cover; height: 1000px; width: 600px"></div>
+			<div class="col-md-4" style="background-image: url(images/emptysofa.jpg); background-size: cover; height: 1000px; width: 600px"></div>
 		</div>
 		  <br>
 		<div class="row text-dark">

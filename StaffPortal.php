@@ -62,10 +62,10 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -101,7 +101,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div><hr>
 					<div class="row">
 						<div class="col-md-8">
-						<div class="card-title"><strong>New Client</strong></div>
+						<div class="card-title"><strong>Add New Client</strong></div>
     					<p class="card-text">Add new client for first time user.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 2%">
@@ -110,7 +110,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div>	<hr>
 					<div class="row">
 						<div class="col-md-8">
-						<div class="card-title"><strong>New Item</strong></div>
+						<div class="card-title"><strong>Add New Item</strong></div>
     					<p class="card-text">Add new item to the stock.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 2%">
@@ -119,7 +119,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div><hr>
 					<div class="row">
 						<div class="col-md-8">
-						<div class="card-title"><strong>New Staff</strong></div>
+						<div class="card-title"><strong>Add New Staff</strong></div>
     					<p class="card-text">Add new staff.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 2%">
@@ -128,7 +128,7 @@ if (!isset($_SESSION['loggedin'])) {
 					</div><hr>
 					<div class="row">
 						<div class="col-md-8">
-						<div class="card-title"><strong>New Owner</strong></div>
+						<div class="card-title"><strong>Add New Owner</strong></div>
     					<p class="card-text">Add new item owner.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 2%">
@@ -145,7 +145,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col-md-8">
 						<div class="card-title"><strong>Records</strong></div>
-    					<p class="card-text">Remove, edit, add or search for record(s) in the records table.</p>
+    					<p class="card-text">Remove, edit or search for record(s) in the record table.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 5%">
 						<a href="ManageRecords" class="btn btn-outline-light btn-lg">Click</a>
@@ -154,7 +154,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col-md-8">
 						<div class="card-title"><strong>Clients</strong></div>
-    					<p class="card-text">Remove, edit, add or search for client(s) in the clients table.</p>
+    					<p class="card-text">Remove, edit or search for client(s) in the client table.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 5%">
 						<a href="ManageClients" class="btn btn-outline-light btn-lg">Click</a>
@@ -163,7 +163,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col-md-8">
 						<div class="card-title"><strong>Items</strong></div>
-    					<p class="card-text">Remove, edit, add or search for item(s) in the items table.</p>
+    					<p class="card-text">Remove, edit or search for item(s) in the item table.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 5%">
 						<a href="ManageItems" class="btn btn-outline-light btn-lg">Click</a>
@@ -172,7 +172,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col-md-8">
 						<div class="card-title"><strong>Staffs</strong></div>
-    					<p class="card-text">Remove, edit, add or search for staff(s) in the staffs table.</p>
+    					<p class="card-text">Remove, edit or search for staff(s) in the staff table.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 5%">
 						<a href="ManageStaffs" class="btn btn-outline-light btn-lg">Click</a>
@@ -181,7 +181,7 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col-md-8">
 						<div class="card-title"><strong>Owners</strong></div>
-    					<p class="card-text">Remove, edit, add or search for item owner(s) in the owners table.</p>
+    					<p class="card-text">Remove, edit or search for item owner(s) in the owner table.</p>
 						</div>
 						<div class="col-md-4" align="right" style="margin-top: 5%">
 						<a href="ManageOwners" class="btn btn-outline-light btn-lg">Click</a>

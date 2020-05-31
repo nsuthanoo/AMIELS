@@ -144,7 +144,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 					<input type="hidden" id="act" name="act" value="do_edit">
 					<div class="row">
 						<div class="col">
-							<button type="submit" class="btn btn-success btn-lg">Submit</button><br><br>
+							<button type="submit" class="btn btn-success btn-lg">Save</button><br><br>
 						</div>
 					</div>
 				</div>

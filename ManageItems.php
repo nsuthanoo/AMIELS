@@ -94,10 +94,10 @@ $q="SELECT * FROM item;";
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -122,7 +122,7 @@ $q="SELECT * FROM item;";
   								<option value="IID">Item ID</option>
 								<option value="TBM">Type, Brand, Model</option>
 								<option value="CS">Colors, Size</option>
-								<option value="CD">Conditions</option>
+								<option value="CD">Condition</option>
 								<option value="RM">Remarks</option>
 								<option value="OID">Owner ID</option>
 								<option value="BS">Borrow Status</option>
@@ -146,7 +146,7 @@ $q="SELECT * FROM item;";
 						<th scope="col">Model</th>
 						<th scope="col">Colors</th>
 						<th scope="col">Size</th>
-						<th scope="col">Conditions</th>
+						<th scope="col">Condition</th>
 						<th scope="col">Remarks</th>
 						<th scope="col">Owner ID</th>
 						<th scope="col">Borrow Status</th>

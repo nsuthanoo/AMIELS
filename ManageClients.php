@@ -99,10 +99,10 @@ $q="SELECT * FROM client;";
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -130,7 +130,7 @@ $q="SELECT * FROM client;";
 								<option value="CYF">Year and Faculty</option>
 								<option value="CPN">Phone Number</option>
 								<option value="CLI">Line ID</option>
-								<option value="CEM">E-Mail</option>
+								<option value="CEM">E-mail</option>
 							</select>
 						</div>
 						<div class="col" id="fields"></div>
@@ -151,7 +151,7 @@ $q="SELECT * FROM client;";
 						<th scope="col">Year, Faculty</th>
 						<th scope="col">Phone Number</th>
 						<th scope="col">Line ID</th>
-						<th scope="col">E-Mail</th>
+						<th scope="col">E-mail</th>
 						<th scope="col"></th>
 						<th scope="col"></th>
 					</tr>

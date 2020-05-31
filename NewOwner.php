@@ -62,10 +62,10 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item active" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item active" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -82,7 +82,7 @@ if (!isset($_SESSION['loggedin'])) {
 						<div class="col">
 							<label for="OwnerID" style="font-size: 30px">Owner ID</label>
 							<input type="text" class="form-control" id="OwnerID" name="OwnerID" placeholder="xxxxxxxxxx" required autofocus minlength="10" maxlength="10" pattern="[0-9]{10}">
-							<small id="FindOwnerID" class="form-text text-muted">Default : Student ID</a></small>
+							<small id="FindOwnerID" class="form-text text-muted">Default: Student ID</a></small>
 						</div>
 						<div class="col">
 							<label for="Nickname" style="font-size: 30px">Nickname</label>
@@ -153,18 +153,18 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col">
 							<label for="tel" style="font-size: 30px">Phone Number</label>
-							<input type="tel" class="form-control" id="tel" name="tel" placeholder="xxx-xxx-xxxx" required maxlength="12"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+							<input type="tel" class="form-control" id="tel" name="tel" placeholder="xxx-xxx-xxxx" maxlength="12"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 						</div>
 						<div class="col">
 							<label for="LineID" style="font-size: 30px">Line ID</label>
-							<input type="text" class="form-control" id="LineID" name="LineID" required maxlength="100">
+							<input type="text" class="form-control" id="LineID" name="LineID" maxlength="100">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col">
 							<label for="email" style="font-size: 30px">E-mail</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="mail@example.com" required >
+							<input type="email" class="form-control" id="email" name="email" placeholder="mail@example.com">
 						</div>
 					</div>
 				<br>
@@ -176,7 +176,7 @@ if (!isset($_SESSION['loggedin'])) {
 				</div>
 			</form>
 		</div>
-			<div class="col-md-4" style="background-image: url(images/pepae.jpg); background-size: cover; height: 1000px; width: 600px"></div>
+			<div class="col-md-4" style="background-image: url(images/emptysofa.jpg); background-size: cover; height: 1000px; width: 600px"></div>
 		</div>
 		  <br>
 		<div class="row text-dark">

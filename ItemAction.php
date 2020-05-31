@@ -104,7 +104,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 						<div class="col">
 							<label for="OwnerID" style="font-size: 30px">Owner ID</label>
 							<input type="text" class="form-control" id="OwnerID" name="OwnerID" required maxlength="10" pattern="[0-9]{10}" value="'.$oid.'">
-							<small id="FindOwnerID" class="form-text text-muted">Find owner ID <a href="ManageOwners" style="color: black" target="_blank">here</a></small>
+							<small id="FindOwnerID" class="form-text text-muted">Find Owner ID <a href="ManageOwners" style="color: black" target="_blank">here</a></small>
 						</div>
 					</div>
 					<div class="row">
@@ -118,7 +118,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 					<input type="hidden" id="act" name="act" value="do_edit">
 					<div class="row">
 						<div class="col">
-							<button type="submit" class="btn btn-success btn-lg">Submit</button>
+							<button type="submit" class="btn btn-success btn-lg">Save</button>
 						</div>
 					</div>
 				</div>

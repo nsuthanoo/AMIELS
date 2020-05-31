@@ -73,10 +73,10 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item active" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -126,6 +126,17 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 				$q2="SELECT * FROM item WHERE item_id= '$item_id';";
 				$ci=mysqli_query($con, $q2);
 				$res=mysqli_fetch_assoc($ci);
+				$em="SELECT * FROM client WHERE student_id= '$student_id';";
+				$emr=mysqli_query($con, $em);
+				$emres=mysqli_fetch_assoc($emr);
+				$to_email = $emres['email'];
+				$subject = '[Artsband] Records Information';
+				$message = '---Artsband Musical Instrument and Equipment Lending System(AMIELS)---
+Records Information:
+----------------------------------------------------------
+';
+
+				$headers = 'From: amielslnwm.noreply@amiels.lnw.mn';
 				if ($res["borrow_status"]=="BORROWED"){
 					echo '<p class="text-dark">The item is not in stock.</p>';
 				} else {
@@ -133,6 +144,12 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 						$q3="UPDATE item SET borrow_status = 'BORROWED' WHERE item_id= '$item_id';";
 						mysqli_query($con, $q3);
 						echo '<p class="text-dark">Added Successful</p>';
+						$message=$message.'Record ID: '.$ctimestamp.$id.'
+Item ID: '.$item_id.'
+Borrow Date: '.$borrow_date.'
+Return Date: '.$return_date.'
+-----------------------------------------------------------
+';
 					} else{
 						echo "<p class='text-dark'>Error : " . mysqli_error($con)."</p>";
 					}
@@ -163,11 +180,22 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 							$q3="UPDATE item SET borrow_status = 'BORROWED' WHERE item_id= '$ciid';";
 							mysqli_query($con, $q3);
 							echo '<p class="text-dark">Added Successful</p>';
+$message=$message.'Record ID: '.$ctimestamp.$id.'
+Item ID: '.$item_id.'
+Borrow Date: '.$borrow_date.'
+Return Date: '.$return_date.'
+-----------------------------------------------------------
+';
 						} else{
 							echo "<p class='text-dark'>Error : " . mysqli_error($con)."</p>";
 						}
 					}
 				}
+				$message=$message.'-----------------------------------------------------------
+You can find more information about your record at our website.
+http://www.amiels.lnw.mn/CheckRecord';
+				$headers = 'From: amielslnwm.noreply@amiels.lnw.mn';
+				mail($to_email,$subject,$message,$headers);
 				echo '<br><a href="NewRecord" class="btn btn-success btn-lg">Create more record</a>&nbsp;';
 				echo '<a href="ManageRecords" class="btn btn-warning btn-lg">Check Record Table</a>&nbsp;';
 				echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
@@ -187,14 +215,30 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 						if (mysqli_query($con, $q)) {
 						  $q3="UPDATE item SET borrow_status = 'BORROWED' WHERE item_id= '$item_id';";
 						  mysqli_query($con, $q3);
+						  $em="SELECT * FROM client WHERE student_id= '$student_id';";
+						  $emr=mysqli_query($con, $em);
+						  $emres=mysqli_fetch_assoc($emr);
 						  echo '<p class="text-dark display-2">New record created successfully!</p>';
 						  echo '<br><a href="NewRecord" class="btn btn-success btn-lg">Create more record</a>&nbsp;';
 						  echo '<a href="ManageRecords" class="btn btn-warning btn-lg">Check Record Table</a>&nbsp;';
 						  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';
+							$to_email = $emres['email'];
+							$subject = '[Artsband] Record#'.$ctimestamp.$id;
+							$message = '---Artsband Musical Instrument and Equipment Lending System(AMIELS)---
+Your Record Information:
+Record ID: '.$ctimestamp.$id.'
+Item ID: '.$item_id.'
+Borrow Date: '.$borrow_date.'
+Return Date: '.$return_date.'
+---------------------------------------------------------------
+You can find more information about your record at our website.
+http://www.amiels.lnw.mn/CheckRecord';
+							$headers = 'From: amielslnwm.noreply@amiels.lnw.mn';
+							mail($to_email,$subject,$message,$headers);
 						} else {
 						  echo '<p class="text-dark display-2">Opps! Something went wrong.</p>';
 						  echo '<p class="text-dark display-4">Please check your information again.</p>';
-						  echo "<p class='text-dark'>Error Message: " . mysqli_error($con)."</p>";
+						  echo "<p class='text-dark'>Item ID, Staff ID or Student ID does not exist in the database.</p>";
 						  echo '<br><a href="NewRecord" class="btn btn-success btn-lg">Try Again</a>&nbsp;';
 						  echo '<a href="ManageRecords" class="btn btn-warning btn-lg">Check Record Table</a>&nbsp;';
 						  echo '<a href="StaffPortal" class="btn btn-secondary btn-lg">Back to home</a>';

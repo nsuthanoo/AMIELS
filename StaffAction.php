@@ -100,7 +100,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 					<input type="hidden" id="act" name="act" value="do_edit">
 					<div class="row">
 						<div class="col">
-							<button type="submit" class="btn btn-success btn-lg">Submit</button><br><br>
+							<button type="submit" class="btn btn-success btn-lg">Save</button><br><br>
 						</div>
 					</div>
 				</div>
@@ -109,7 +109,7 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 		  }
 		  if ($_POST['act']=='delete'){
 			  echo '<div class="container-fluid text-center"><p class="display-3">Delete Staff ID: '.$sid.'</p>';
-			  echo '<p class="display-4">Are you sure you want to delete this item?</p>';
+			  echo '<p class="display-4">Are you sure you want to delete this staff?</p>';
 			  echo '<form  method="post" action="#"><input type="hidden" id="act" name="act" value="do_remove">
 			  <input type="hidden" id="StaffID" name="StaffID" value="'.$sid.'"><input type="hidden" id="act" name="act" value="do_remove"><button type="submit" class="btn btn-danger btn-lg">Delete</button>&nbsp;&nbsp;<a href="#" class="btn btn-outline-danger btn-lg" onclick="window.close();return false;">Cancel</a></form></div>';
 		  }

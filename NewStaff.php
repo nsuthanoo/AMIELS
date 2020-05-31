@@ -62,10 +62,10 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item active" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item active" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -117,11 +117,11 @@ if (!isset($_SESSION['loggedin'])) {
 					<div class="row">
 						<div class="col">
 							<label for="tel" style="font-size: 30px">Phone Number</label>
-							<input type="tel" class="form-control" id="tel" name="tel" placeholder="xxx-xxx-xxxx" required maxlength="12"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+							<input type="tel" class="form-control" id="tel" name="tel" placeholder="xxx-xxx-xxxx" maxlength="12"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 						</div>
 						<div class="col">
 							<label for="LineID" style="font-size: 30px">Line ID</label>
-							<input type="text" class="form-control" id="LineID" name="LineID" required maxlength="100">
+							<input type="text" class="form-control" id="LineID" name="LineID" maxlength="100">
 						</div>
 					</div>
 					<br>

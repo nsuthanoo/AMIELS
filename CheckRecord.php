@@ -111,10 +111,10 @@ staff.staff_id=record.staff_id JOIN client on client.student_id=record.student_i
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="NewRecord">New Record</a>
                    <a class="dropdown-item" href="Return">Return Item</a>
-                   <a class="dropdown-item" href="NewClient">New Client</a>
-                   <a class="dropdown-item" href="NewItem">New Item</a>
-                   <a class="dropdown-item" href="NewStaff">New Staff</a>
-                   <a class="dropdown-item" href="NewOwner">New Owner</a>
+                   <a class="dropdown-item" href="NewClient">Add New Client</a>
+                   <a class="dropdown-item" href="NewItem">Add New Item</a>
+                   <a class="dropdown-item" href="NewStaff">Add New Staff</a>
+                   <a class="dropdown-item" href="NewOwner">Add New Owner</a>
                 </div>
              </li>
 			</ul>
@@ -179,7 +179,7 @@ staff.staff_id=record.staff_id JOIN client on client.student_id=record.student_i
 						<th scope="col">Item ID</th>
 						<th scope="col">Staff ID</th>
 						<th scope="col">Staff Nickname, Year</th>
-						<th scope="col">Stutus</th>
+						<th scope="col">Status</th>
 					</tr>
 				</thead>
 				<tbody class="text-center">
@@ -362,7 +362,7 @@ staff.staff_id=record.staff_id JOIN client on client.student_id=record.student_i
 								$rtts=strtotime($row["return_date"]);
 								$ctts=strtotime("now");
 								if ($ctts>$rtts){
-									echo "<td>Over Due</td>";
+									echo "<td>Overdue</td>";
 								}else{
 									echo "<td>Not Returned</td>";
 								}
